@@ -52,6 +52,14 @@ Got a question about your Spring Framework 5 course? [Checkout these FAQs!](http
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
 
 ## Change log
+
+# EqualsAndHashcode 7-14-2024
 * working on using the equals and hashcode override within Intellij.
 * context menu select 'equals() and hashcode()'
 * fill-out items in the dialogue box and Intellij will create the methods for you.
+
+# toString 7-14/2024
+* adding a tostring method to each of the book and author classes
+* context menu select 'toString()'
+* a few dialogue entries (select class data elemeents to add) and Intellij will build the method for you
+
