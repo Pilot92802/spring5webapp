@@ -50,3 +50,8 @@ Got a question about your Spring Framework 5 course? [Checkout these FAQs!](http
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+## Change log
+* working on using the equals and hashcode override within Intellij.
+* context menu select 'equals() and hashcode()'
+* fill-out items in the dialogue box and Intellij will create the methods for you.
