@@ -70,3 +70,7 @@ Got a question about your Spring Framework 5 course? [Checkout these FAQs!](http
   * provide the type (in this case Author) and the id type which is a Long
 * Create new class (interface) in the Repository package called BookRepository extends CrudRepository
   * provide the type (in this case Book) and the id type which is a Long
+
+### Bootstrap 8/3/2024
+* struggled with an error where the auto generated id in the JPA managed component didn't appear to be auto generating. Needed it update the return of the hashcode method override.  The return didn't handle the condition if the id was null.
+
