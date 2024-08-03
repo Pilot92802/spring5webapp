@@ -1,6 +1,7 @@
 package guru.springframework.spring5webapp.Domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,17 +15,16 @@ public class Book {
     private String Isbn;
 
     @ManyToMany
-    @JoinTable(name = "author_book", joinColumns = @JoinColumn(name="book_id"),
-               inverseJoinColumns = @JoinColumn(name="author_id"))
-    private Set<Author> Authors;
+    @JoinTable(name = "Author_Book", joinColumns = @JoinColumn(name="Book_id"),
+               inverseJoinColumns = @JoinColumn(name="Author_id"))
+    private Set<Author> authors = new HashSet<>();
 
     public Book() {
     }
 
-    public Book(String title, String isbn, Set<Author> authors) {
+    public Book(String title, String isbn) {
         Title = title;
         Isbn = isbn;
-        Authors = authors;
     }
 
     public Long getId() {
@@ -52,11 +52,11 @@ public class Book {
     }
 
     public Set<Author> getAuthors() {
-        return Authors;
+        return authors;
     }
 
     public void setAuthors(Set<Author> authors) {
-        Authors = authors;
+        authors = authors;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Book {
                 "id=" + id +
                 ", Title='" + Title + '\'' +
                 ", Isbn='" + Isbn + '\'' +
-                ", Authors=" + Authors +
+                ", Authors=" + authors +
                 '}';
     }
 
@@ -76,11 +76,11 @@ public class Book {
 
         Book book = (Book) o;
 
-        return id.equals(book.id);
+        return id != null ? id.equals(book.id) : book.id == null;
     }
 
     @Override
     public int hashCode() {
-        return id.hashCode();
+        return id != null ? id.hashCode() : 0;
     }
 }
